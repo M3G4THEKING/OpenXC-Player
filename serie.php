@@ -136,7 +136,7 @@ foreach ($output['episodes'][$season_number] as $item){
                                     </div>
                                     <div class="col-lg-7 col-md-6 infor">
                                        <h4>
-                                          <a class="title" href="serie_play.php?sessao='.gerar_hash(256).'&stream='.$id_serie.'&episodio='.$episodio.'&temporada='.$season_number.'&serie='.$serienome.'&titulo='.urlencode($titulo).'&ext='.$ext.'&proxid='.$id_serie_prox.'&proxep='.$episodio_sprox.'&duracao='.$duracao.'&idserie='.$idserie.'&plot='.urlencode($info).'&img='.urlencode($img).'">EpisÃ³dio '.$episodio.' - '.$titulo.'</a>
+                                          <a class="title" href="serie_play.php?sessao='.gerar_hash(256).'&stream='.$id_serie.'&episodio='.$episodio.'&temporada='.$season_number.'&serie='.$serienome.'&titulo='.urlencode($titulo).'&ext='.$ext.'&proxid='.$id_serie_prox.'&proxep='.$episodio_sprox.'&duracao='.$duracao.'&idserie='.$idserie.'&plot='.urlencode($info).'&img='.urlencode($img).'">Episode '.$episodio.' - '.$titulo.'</a>
                                        </h4>
                                        <div class="metabox">
                                           <div class="ratings">
