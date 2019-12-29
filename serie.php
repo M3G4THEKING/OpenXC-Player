@@ -127,16 +127,16 @@ foreach ($output['episodes'][$season_number] as $item){
                               <div class="row">
 
                                  <div class="post post-medium">
-                                    <div class="col-lg-2 col-md-3 thumbr">
+                                    <div class="col-lg-1 col-md-3 thumbr">
                                        <a class="post-thumb" href="serie_play.php?sessao='.gerar_hash(256).'&stream='.$id_serie.'&episodio='.$episodio.'&temporada='.$season_number.'&serie='.$serienome.'&titulo='.urlencode($titulo).'&ext='.$ext.'&proxid='.$id_serie_prox.'&proxep='.$episodio_sprox.'&duracao='.$duracao.'&idserie='.$idserie.'&plot='.urlencode($info).'&img='.urlencode($img).'">
                                           <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
                                           <div class="cactus-note ct-time font-size-1"><span>'.$duracao.'</span></div>
-                                          <img class="img-responsive" src="'.$img.'" style="width:100%;height:200px;" alt="SEM CAPA">
+                                          <img class="img-responsive" src="'.$img.'" style="width:100%;height:100%;" alt="SEM CAPA">
                                        </a>
                                     </div>
                                     <div class="col-lg-7 col-md-6 infor">
                                        <h4>
-                                          <a class="title" href="serie_play.php?sessao='.gerar_hash(256).'&stream='.$id_serie.'&episodio='.$episodio.'&temporada='.$season_number.'&serie='.$serienome.'&titulo='.urlencode($titulo).'&ext='.$ext.'&proxid='.$id_serie_prox.'&proxep='.$episodio_sprox.'&duracao='.$duracao.'&idserie='.$idserie.'&plot='.urlencode($info).'&img='.urlencode($img).'">Episódio '.$episodio.' - '.$titulo.'</a>
+                                          <a class="title" href="serie_play.php?sessao='.gerar_hash(256).'&stream='.$id_serie.'&episodio='.$episodio.'&temporada='.$season_number.'&serie='.$serienome.'&titulo='.urlencode($titulo).'&ext='.$ext.'&proxid='.$id_serie_prox.'&proxep='.$episodio_sprox.'&duracao='.$duracao.'&idserie='.$idserie.'&plot='.urlencode($info).'&img='.urlencode($img).'">EpisÃ³dio '.$episodio.' - '.$titulo.'</a>
                                        </h4>
                                        <div class="metabox">
                                           <div class="ratings">
