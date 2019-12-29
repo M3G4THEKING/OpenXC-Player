@@ -76,13 +76,13 @@ $id = trim($_REQUEST['id']);
 		$genre = $row['genre'];	
 	?>
                        
-                           <article class="col-lg-2 col-md-3 col-sm-4">
+                           <article class="col-lg-1 col-md-3 col-sm-4">
                               <div class="post post-medium">
                                  <div class="thumbr">
                               <a class="post-thumb" href="serie.php?sessao=<?php echo gerar_hash(256); ?>&stream=<?php echo $serie_id; ?>&serie=<?php echo urlencode($serie_nome); ?>&img=<?php echo urlencode($serie_img); ?>">
                                  <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
                                  <div class="cactus-note ct-time font-size-1"><span><?php echo $genre; ?></span></div>
-                                 <img class="img-responsive" src="<?php echo $serie_img; ?>" style="width: 100%;height:400px;" alt="#">
+                                 <img class="img-responsive" src="<?php echo $serie_img; ?>" style="width: 100%;height:100%;" alt="#">
                               </a>
                            </div>
                                  <div class="infor">
