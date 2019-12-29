@@ -24,13 +24,13 @@ $tipo = 'series';
    <head>
       <?php include("inc/head.php"); ?>
       
-      <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
+      <?php if($_GET['player'] == 2) { ?>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.min.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mokoshalb/clappr-ads/ads.js"></script>
       <?php } ?>
-      <?php if($_GET['player'] == 2) { ?>
+      <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
       <link href="assets/plugins_player/video-js.css" type="text/css" rel="stylesheet">
       <link href="assets/plugins_player/videojs.css?v=1540876404" type="text/css" rel="stylesheet">
       <link href="assets/plugins_player/videojs.airplay.css" type="text/css" rel="stylesheet">
@@ -39,7 +39,7 @@ $tipo = 'series';
       <?php } ?>
       <?php if($_GET['player'] == 3) { ?>
       <link rel="stylesheet" href="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.css" type="text/css"/>
-<script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
+      <script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
       <?php } ?>
       <?php if($_GET['player'] == 4) { ?>
       <script src="//cdn.jwplayer.com/libraries/DbXZPMBQ.js"></script>
@@ -92,9 +92,9 @@ $tipo = 'series';
                      <!-- VIDEO INFO -->
                      <div class="video-info dropshd">
                         <!-- 16:9 aspect ratio -->
-        <div class="embed-responsive embed-responsive-16by9 video-embed-box">
         
-        <?php if($exts == 'avi' || $exts == 'mkv') { ?>
+        
+        <?php if($exts == 'xavi' || $exts == 'xmkv') { ?>
         <center><br><br>
         <h4><?php echo ERROR_FORMATO_VIDEO; ?>: <?php echo $exts; ?></h4>
         <br><br>
@@ -102,10 +102,10 @@ $tipo = 'series';
         </center>
         <?php } else { ?>
         
-        <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
+        <?php if($_GET['player'] == 2) { ?>
         <div id="livevideo"></div>
         <?php } ?>
-        <?php if($_GET['player'] == 2) { ?>
+        <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
         <video id="livevideo" class="video-js vjs-16-9 vjs-big-play-centered" poster="<?php echo $img; ?>"></video>
         <?php } ?> 
         <?php if($_GET['player'] == 3) { ?>
@@ -131,12 +131,14 @@ $tipo = 'series';
   <video class="afterglow" id="livevideo" style="width:100%;" height="650">
  <source type="video/mp4" src="<?php echo IP; ?>/<?php echo $tipo; ?>/<?php echo $user; ?>/<?php echo $pwd; ?>/<?php echo $id; ?>.<?php echo $exts; ?>" />
  </video>
+
        <?php } ?> 
        
        
        <?php } ?> 
         
        </div>
+<div align="right"> <a href="javascript:void(0)" id="fullscreen"><?php echo TXT_FULLSCREEN; ?></a></div>
        <h2 class="title main-head-title"><?php echo $serie; ?></h2>
          <div class="metabox">
            
@@ -145,7 +147,7 @@ $tipo = 'series';
             <i class="fa fa-clock-o"></i> <?php echo TXT_DURACAO; ?>: <?php echo $duracao; ?>
            </span>
             
-            <a href="javascript:void(0)" id="fullscreen"><?php echo TXT_FULLSCREEN; ?></a>
+            
           
           </div>
           
@@ -170,7 +172,7 @@ $tipo = 'series';
                         <h3><?php echo $plot; ?></h3>
                         <hr>
                         <h3>
-                       <?php echo $temporada;  ?>ª <?php echo TXT_TEMPORADA; ?> / <?php echo TXT_EPISODIO; ?> <?php echo $episodio; ?> <?php if($_GET['auto'] == '') { ?>- <?php echo $titulo; ?> <?php } ?>
+                       <?php echo $temporada;  ?>Âª <?php echo TXT_TEMPORADA; ?> / <?php echo TXT_EPISODIO; ?> <?php echo $episodio; ?> <?php if($_GET['auto'] == '') { ?>- <?php echo $titulo; ?> <?php } ?>
                       </h3>
                       <hr>
                      </div>
@@ -182,7 +184,7 @@ $tipo = 'series';
                   <div class="row auto-clear">
                   <div class="col-lg-12 col-md-12 col-sm-12 category-video-grid">
                
-               <h2 class="title main-head-title">Episódios <?php echo $temporada;  ?>ª Temporada</h2>
+               <h2 class="title main-head-title">Season <?php echo $temporada;  ?> </h2>
                <?php
               
 
@@ -259,7 +261,7 @@ foreach ($output['episodes'][$temporada] as $item){
 	
 ?>
 <br><br>
-<button class="subscribe-btn" onclick="location.href='serie.php?sessao=<?php echo gerar_hash(256); ?>&stream=<?php echo $_GET['idserie']; ?>&serie=<?php echo $_GET['serie']; ?>&img=<?php echo $_GET['img']; ?>';" type="button" title="Voltar"><?php echo TXT_TODAS_EMPORADAS; ?></button>
+<button class="subscribe-btn" onclick="location.href='serie.php?sessao=<?php echo gerar_hash(256); ?>&stream=<?php echo $_GET['idserie']; ?>&serie=<?php echo $_GET['serie']; ?>&img=<?php echo $_GET['img']; ?>';" type="button" title="Go Back"><?php echo TXT_TODAS_TEMPORADAS; ?></button>
 
              </div>
              </div>
@@ -284,7 +286,7 @@ foreach ($output['episodes'][$temporada] as $item){
 
       <?php include("inc/scripts.php"); ?>
       
-      <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
+      <?php if($_GET['player'] == 2) { ?>
       <style>
 		[data-player] {
 		    position: relative;
@@ -332,10 +334,10 @@ foreach ($output['episodes'][$temporada] as $item){
             </script>
      <?php } ?>
      
-      <?php if($_GET['player'] == 2) { ?>
+      <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
       <script type="text/javascript">
       var streamsrc = "<?php echo IP; ?>/<?php echo $tipo; ?>/<?php echo $user; ?>/<?php echo $pwd; ?>/<?php echo $id; ?>.<?php echo $exts; ?>";
-      var playerobj = window.playerobj = videojs("livevideo", {sources: {type: "video/mp4", src: streamsrc}, controls: true, autoplay: true, loop: false, language: "pt-br", languages: {pt: {LIVE: "AO VIVO", Fullscreen: "Tela inteira", Pause: "Pausar", Play: "Reproduzir", Mute: "Mudo", Unmute: "Ativar som"}}, notSupportedMessage: "Limite de telas simultâneas atingido. Por favor, encerre uma das transmissões, aguarde 1 minuto e atualize a página.", preload: "none", muted: false, controlBar: { fullscreenToggle: false, volumePanel: false }, plugins: { airplayButton: {} }});
+      var playerobj = window.playerobj = videojs("livevideo", {sources: {type: "video/mp4", src: streamsrc}, controls: true, autoplay: true, loop: false, language: "en-en", preload: "none", muted: false, controlBar: { fullscreenToggle: true, volumePanel: true }, plugins: { airplayButton: {} }});
       playerobj.on('ended', function() { go("serie_play.php?sessao=<?php echo $_GET['sessao']; ?>&stream=<?php echo $_GET['proxid']; ?>&episodio=<?php echo $_GET['proxep']; ?>&temporada=<?php echo $_GET['temporada']; ?>&ext=<?php echo $_GET['ext']; ?>&proxid=<?php echo $_GET['proxid']; ?>&proxep=<?php echo $_GET['proxep']; ?>&serie=<?php echo $_GET['serie']; ?>&titulo=<?php echo $_GET['titulo']; ?>&duracao=<?php echo $_GET['duracao']; ?>&idserie=<?php echo $_GET['idserie']; ?>&plot=<?php echo $_GET['plot']; ?>&player=<?php echo isset($_GET['player']) ? $_GET['player']:'1'; ?>&img=<?php echo $_GET['img']; ?>&auto=1"); });
      
      </script>
