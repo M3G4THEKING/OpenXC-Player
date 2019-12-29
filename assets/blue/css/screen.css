@@ -964,7 +964,7 @@ span.meta-i i {margin-right:10px;}
 	background-color: #1e1e1e;
 	display:block;
 	padding: 20px 20px 20px 20px;
-	border-top: 5px solid var(--primary-color);
+	border-top: 20px solid #1e1e1e ;
 }
 
 #single-video-wrapper .video-info,
@@ -1926,3 +1926,4 @@ span.join-date {
     .auto-clear .col-xs-4:nth-child(3n+1){clear:left;}
     .auto-clear .col-xs-6:nth-child(odd){clear:left;}
 }
+
