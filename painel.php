@@ -203,7 +203,7 @@ $pwd = $_COOKIE['xpwdm'];
                                  <div class="post post-medium">
                                     <div class="thumbr">
                                        <a class="post-thumb" href="canal.php?sessao=<?php echo gerar_hash(256); ?>&stream=<?php echo $tv_id; ?>&streamtipo=<?php echo $tv_type; ?>&canal=<?php echo urlencode($tv_nome); ?>&img=<?php echo urlencode($tv_img); ?>&catg=<?php echo $category_id; ?>">
-                                       <img class="img-responsive" src="assets/img/ch-1.png" alt="#">
+                                       <img class="img-responsive" src="<?php echo $tv_img; ?>" alt="#" style="width:100%;height:150px;">
                                        </a>
                                     </div>
                                     <div class="infor">
