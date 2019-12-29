@@ -296,9 +296,7 @@ $idcatg = trim($_REQUEST['catg']);
                         height: 'auto',
                         width: '100%',
                         poster: "<?php echo $img; ?>",
-                        watermark: "assets/<?php echo $template; ?>/img/main-logo.png",
-       					watermarkLink: "#",
-       					position: 'bottom-right'
+                        
                     }
                 );
             </script>
