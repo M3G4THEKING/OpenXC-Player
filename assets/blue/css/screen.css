@@ -153,8 +153,8 @@ section {margin:10px 0; display:block;}
 
 .main-logo {
 	display:inline-block;
-	margin-top:15px;
-	margin-bottom:15px;
+	margin-top:8px;
+	margin-bottom:8px;
 	
 }
 
@@ -179,7 +179,7 @@ section {margin:10px 0; display:block;}
 	background:#080b12 url('../img/backgrounds/bottom-bg-img.png') no-repeat center top fixed;
     background-repeat: no-repeat;
 	background-size:cover;
-	border-top: 5px solid var(--primary-color);
+
 }
 
 .footer-background {
@@ -1926,4 +1926,3 @@ span.join-date {
     .auto-clear .col-xs-4:nth-child(3n+1){clear:left;}
     .auto-clear .col-xs-6:nth-child(odd){clear:left;}
 }
-
