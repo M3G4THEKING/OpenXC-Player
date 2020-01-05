@@ -21,6 +21,7 @@ define('CANAIS_AO_VIVO','Live Channels');
 define('AO_VIVO','Live');
 
 define('MENU_TV_AO_VIVO','Live TV');
+define('MENU_MOVIES','Movies');
 define('MENU_HOME','Home');
 define('MENU_SERIES','Series');
 define('MENU_RENOVAR','Renew Subscription');
@@ -58,9 +59,4 @@ define('TXT_DESCRICAO_ASSINATURA','Payments through Bank Slip may take up to 24 
 define('TXT_DESCRICAO_ASSINATURA_DESCONTO','* To remove adult channels from the list, you must ask to delete them from your list. <br> If necessary, contact our team via whatsapp.');
 define('BOTAO_WHATSAPP','WHATSAPP SERVICE');
 define('BOTAO_ASSINAR','Sign');
-define('DESCRICAO_PLANOS','<li>Â±6.000  Canais, Filmes e SÃ©ries</li>
-                                <li>Canais SD, HD e FULL HD</li>
-                                <li>Canais Adultos (Opcional)</li>
-                                <li>Desenhos, Esportes e Religiosos</li>
-                                <li>Canais Brasileiros</li>
-                                <li>Assista Onde Quiser</li>');
+define('DESCRICAO_PLANOS','');
