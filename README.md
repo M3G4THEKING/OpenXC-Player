@@ -7,7 +7,7 @@ Copy containing files to a folder under your public html folder.
 Edit libs/config.php to the url of your XtreamCodes portal.
 // URL DNS
 define('IP','http://domain.com:80'); 
-
+ONLY BLUE THEME WORKING 100% RIGHT NOW
 ### Screenshots
 
 ![image](https://user-images.githubusercontent.com/56216907/66614072-f1c31e80-eb9d-11e9-93ad-81610630685a.png)
