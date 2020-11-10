@@ -28,13 +28,13 @@ $duracao = $output['info']['duration'];
    <head>
       <?php include("inc/head.php"); ?>
       
-      <?php if($_GET['player'] == 2) { ?>
+      <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.min.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mokoshalb/clappr-ads/ads.js"></script>
       <?php } ?>
-      <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
+      <?php if($_GET['player'] == 2) { ?>
       <link href="assets/plugins_player/video-js.css" type="text/css" rel="stylesheet">
       <link href="assets/plugins_player/videojs.css?v=1540876404" type="text/css" rel="stylesheet">
       <link href="assets/plugins_player/videojs.airplay.css" type="text/css" rel="stylesheet">
@@ -43,7 +43,7 @@ $duracao = $output['info']['duration'];
       <?php } ?>
       <?php if($_GET['player'] == 3) { ?>
       <link rel="stylesheet" href="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.css" type="text/css"/>
-      <script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
+<script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
       <?php } ?>
       <?php if($_GET['player'] == 4) { ?>
       <script src="//cdn.jwplayer.com/libraries/DbXZPMBQ.js"></script>
@@ -96,9 +96,9 @@ $duracao = $output['info']['duration'];
                      <!-- VIDEO INFO -->
                      <div class="video-info dropshd">
                         <!-- 16:9 aspect ratio -->
+        <div class="embed-responsive embed-responsive-16by9 video-embed-box">
         
-        
-        <?php if($exts == 'xavi' || $exts == 'xmkv') { ?>
+        <?php if($exts == 'avi' || $exts == 'mkv') { ?>
         <center><br><br>
         <h4><?php echo ERROR_FORMATO_VIDEO; ?>: <?php echo $exts; ?></h4>
         <br><br>
@@ -106,10 +106,10 @@ $duracao = $output['info']['duration'];
         </center>
         <?php } else { ?>
         
-        <?php if($_GET['player'] == 2) { ?>
+        <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
         <div id="livevideo"></div>
         <?php } ?>
-        <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
+        <?php if($_GET['player'] == 2) { ?>
         <video id="livevideo" class="video-js vjs-16-9 vjs-big-play-centered" poster="<?php echo $img; ?>"></video>
         <?php } ?> 
         <?php if($_GET['player'] == 3) { ?>
@@ -141,7 +141,6 @@ $duracao = $output['info']['duration'];
        <?php } ?> 
         
        </div>
-<div align="right"> <a href="javascript:void(0)" id="fullscreen"><?php echo TXT_FULLSCREEN; ?></a></div>
        <h2 class="title main-head-title"><?php echo $filme; ?></h2>
          <div class="metabox">
            
@@ -150,22 +149,15 @@ $duracao = $output['info']['duration'];
             <i class="fa fa-clock-o"></i><?php echo TXT_DURACAO; ?>: <?php echo $duracao; ?>
            </span>
             
-            
+            <a href="javascript:void(0)" id="fullscreen"><?php echo TXT_FULLSCREEN; ?></a>
           
           </div>
           
                      <a href="filme.php?sessao=<?php echo $_GET['sessao']; ?>&stream=<?php echo $_GET['stream']; ?>&streamtipo=<?php echo $_GET['streamtipo']; ?>&player=1" class="btn <?php if($_GET['player'] == 1 || $_GET['player'] == '') { echo 'btn-primary'; } ?>">PLAYER 1</a>
-
                      <a href="filme.php?sessao=<?php echo $_GET['sessao']; ?>&stream=<?php echo $_GET['stream']; ?>&streamtipo=<?php echo $_GET['streamtipo']; ?>&player=2" class="btn <?php if($_GET['player'] == 2) { echo 'btn-primary'; } ?>">PLAYER 2</a>
-
                      <a href="filme.php?sessao=<?php echo $_GET['sessao']; ?>&stream=<?php echo $_GET['stream']; ?>&streamtipo=<?php echo $_GET['streamtipo']; ?>&player=3" class="btn <?php if($_GET['player'] == 3) { echo 'btn-primary'; } ?>">PLAYER 3</a>
-
                      <a href="filme.php?sessao=<?php echo $_GET['sessao']; ?>&stream=<?php echo $_GET['stream']; ?>&streamtipo=<?php echo $_GET['streamtipo']; ?>&player=4" class="btn <?php if($_GET['player'] == 4) { echo 'btn-primary'; } ?>">PLAYER 4</a>
-
                      <a href="filme.php?sessao=<?php echo $_GET['sessao']; ?>&stream=<?php echo $_GET['stream']; ?>&streamtipo=<?php echo $_GET['streamtipo']; ?>&player=5" class="btn <?php if($_GET['player'] == 5) { echo 'btn-primary'; } ?>">PLAYER 5</a>
-
-
-
                         
                      </div>
                      <div class="clearfix spacer"></div>
@@ -266,7 +258,7 @@ $duracao = $output['info']['duration'];
 
       <?php include("inc/scripts.php"); ?>
       
-      <?php if($_GET['player'] == 2) { ?>
+      <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
       <style>
 		[data-player] {
 		    position: relative;
@@ -313,8 +305,7 @@ $duracao = $output['info']['duration'];
                 );
             </script>
      <?php } ?>
-
-      <?php if($_GET['player'] == 1 || $_GET['player'] == '') { ?>
+      <?php if($_GET['player'] == 2) { ?>
       <script type="text/javascript">
       var streamsrc = "<?php echo IP; ?>/<?php echo $tipo; ?>/<?php echo $user; ?>/<?php echo $pwd; ?>/<?php echo $id; ?>.<?php echo $exts; ?>";
       var playerobj = window.playerobj = videojs("livevideo", {sources: {type: "video/mp4", src: streamsrc}, controls: true, autoplay: true, loop: false, language: "pt-br", languages: {pt: {LIVE: "AO VIVO", Fullscreen: "Tela inteira", Pause: "Pausar", Play: "Reproduzir", Mute: "Mudo", Unmute: "Ativar som"}}, notSupportedMessage: "Limite de telas simultâneas atingido. Por favor, encerre uma das transmissões, aguarde 1 minuto e atualize a página.", preload: "none", muted: false, controlBar: { fullscreenToggle: false, volumePanel: false }, plugins: { airplayButton: {} }});

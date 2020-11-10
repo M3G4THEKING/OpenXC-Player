@@ -4,7 +4,7 @@
 // URL DNS
 define('IP','http://domain.com:80'); 
 
-//blue themes
+//pink, aqua, orange or blue themes
 $template = 'blue'; 
 
 // WhatsApp Number

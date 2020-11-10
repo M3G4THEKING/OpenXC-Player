@@ -153,8 +153,8 @@ section {margin:10px 0; display:block;}
 
 .main-logo {
 	display:inline-block;
-	margin-top:8px;
-	margin-bottom:8px;
+	margin-top:15px;
+	margin-bottom:15px;
 	
 }
 
@@ -179,7 +179,7 @@ section {margin:10px 0; display:block;}
 	background:#080b12 url('../img/backgrounds/bottom-bg-img.png') no-repeat center top fixed;
     background-repeat: no-repeat;
 	background-size:cover;
-
+	border-top: 5px solid var(--primary-color);
 }
 
 .footer-background {
@@ -964,7 +964,7 @@ span.meta-i i {margin-right:10px;}
 	background-color: #1e1e1e;
 	display:block;
 	padding: 20px 20px 20px 20px;
-	border-top: 20px solid #1e1e1e ;
+	border-top: 5px solid var(--primary-color);
 }
 
 #single-video-wrapper .video-info,

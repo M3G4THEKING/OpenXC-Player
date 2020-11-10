@@ -78,13 +78,18 @@ $adulto = trim($_REQUEST['adulto']);
 		$canal_id = $index['stream_id'];
 		$canal_img = $index['stream_icon'];	
 	?>
+				><?php if(strpos($canal_nome, '#')!== FALSE) { ?>
+
+
+<?php } else { ?>
+				
                            <article class="col-lg-2 col-md-6 col-sm-4">
                               <!-- POST L size -->
                               <div class="post post-medium">
                                  <div class="thumbr">
                                     <a class="post-thumb" href="canal.php?sessao=<?php echo $_GET['sessao']; ?>&stream=<?php echo $canal_id; ?>&streamtipo=<?php echo $canal_type; ?>&canal=<?php echo urlencode($canal_nome); ?>&img=<?php echo urlencode($canal_img); ?>&catg=<?php echo $_GET['id']; ?>">
                                        <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
-                                       <div class="cactus-note ct-time font-size-1"><span>Live</span></div>
+                                       <div class="cactus-note ct-time font-size-1"><span>Ao Vivo</span></div>
                                        <img class="img-responsive" src="<?php echo $canal_img; ?>" alt="<?php echo $canal_nome; ?>" style="width:100%;height:200px;">
                                     </a>
                                  </div>
@@ -96,7 +101,7 @@ $adulto = trim($_REQUEST['adulto']);
                                  </div>
                               </div>
                            </article>
-                          <?php } ?>
+                          <?php } ?><?php } ?>
                           
                         </div>
                         <div class="clearfix spacer"></div>
